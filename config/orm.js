@@ -22,17 +22,15 @@ var orm = {
 	},
 	insertOne: function (table, burger_name, callback) {
         var queryString = "INSERT INTO ?? (burger_name) VALUES (?)";
-        console.log(queryString);
 		connection.query(queryString, [table, burger_name], function (err, result) {
             if (err) throw err;
-            console.log(result);
             callback(result);
             
 		});
 	},
 	updateOne: function (table, columnValues, condition, callback) {
-		var queryString = 'UPDATE ?? SET ?? = ?? WHERE ??';
-		connection.query(queryString, [table, objToSql(colvals), condition], function (err, result) {
+        var queryString = 'UPDATE ' + table + ' SET ' + objToSql(columnValues) + ' WHERE ' + condition + ';';
+		connection.query(queryString, function (err, result) {
 			if (err) throw err;
 			callback(result);
 		});
