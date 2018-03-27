@@ -1,7 +1,27 @@
-.no-devour {
-    float:left;
+#no-devour {
+    width: 50%;
+    float: left;
 }
 
-.yes-devour {
-    float:right;
+#yes-devour {
+    width: 50%; 
+    float: left;
+}
+
+#add-burger {
+    position: static;
+    width: 100%;
+    text-align: center;
+    top: 300px;
+    float: left;
+}
+.devours {
+    width: 100%;
+    display: block;
+    clear: none;
+}
+img {
+    margin: auto;
+    display: block; 
+    width: 30%;
 }

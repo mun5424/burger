@@ -1,39 +1,42 @@
-<img src="https://imgur.com/gallery/UheXQh7">
+<div class="container">
+    <div class="col-lg-12">
+    <img src="/images/burger.jpg" align="middle">
+        <div class="devours">
+            <div id="no-devour">
+                <h1>Undevoured burgers</h1>
+                <ul>
+                    {{#each burgers}} {{#unless this.devour}}
+                    <li>
+                        {{this.burger_name}}
+                        <button class="change-devour" data-id="{{this.id}}" data-devour="1">Devour</button>
 
-<div id="no-devour">
-    <h1>Undevoured burgers</h1>
-    <ul>
-        {{#each burgers}} {{#unless this.devour}}
-        <li>
-            {{this.burger_name}}
-                <button class="change-devour" data-id="{{this.id}}" data-devour="1">Devour</button>
-  
-        </li>
-        {{/unless}} {{/each}}
-    </ul>
-</div>
-
-<div id="yes-devour">
-    <h1>Devoured burgers</h1>
-    <ul>
-        {{#each burgers}} {{#if this.devour}}
-        <li>
-            {{this.burger_name}}
-        </li>
-        {{/if}} {{/each}}
-    </ul>
-</div>
-
-
-<div id="add-burger">
-    <div id="input">
-        <form class="create-form">
-            <div class="form-group">
-                <label for="burgername">Add a Burger:</label>
-                <input type="text" id="burgername" name="name">
-            <button type="submit">Submit</button>
+                    </li>
+                    {{/unless}} {{/each}}
+                </ul>
             </div>
-        </form>
-    </div>
-</div>
 
+            <div id="yes-devour">
+                <h1>Devoured burgers</h1>
+                <ul>
+                    {{#each burgers}} {{#if this.devour}}
+                    <li>
+                        {{this.burger_name}}
+                    </li>
+                    {{/if}} {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div id="add-burger">
+            <div class="form-group">
+                <form class="create-form">
+                    <label for="burgername">Add a Burger:</label>
+                    <input type="text" id="burgername" name="name">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
